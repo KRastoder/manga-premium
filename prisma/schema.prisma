@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Mangas {
+  id           Int      @id @default(autoincrement())
+  title        String
+  description  String
+  author       String
+  release_date DateTime
+  createdAt    DateTime @default(now())
+  image_path   String
+}
